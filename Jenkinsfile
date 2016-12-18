@@ -17,7 +17,7 @@ node {
 
   stage "Deploy Application"
   switch (env.BRANCH_NAME) {
-    // Roll out to staging
+    // Roll out to staging testing
     case "staging":
         // Change deployed image in staging to the one we just built
         sh("sed -i.bak 's#gcr.io/cloud-solutions-images/gceme:1.0.0#${imageTag}#' ./k8s/staging/*.yaml")
